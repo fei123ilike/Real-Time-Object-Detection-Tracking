@@ -37,13 +37,18 @@ This project implements real-time object detection and tracking using the YOLOv5
 ## Usage
 
 To start the object detection and tracking, simply run the script with the appropriate arguments:
-
-    ```bash
         
-        python3 detection.py --model_weight yolov5s --iou_threshold 0.5
-        python3 tracking.py --max_age 30 --iou_threshold 0.5
+        python3 detection.py --source 0 --model_weight yolov5s --iou_threshold 0.5
+        python3 tracking.py --source 0 --max_age 30 --iou_threshold 0.5
 
-    ```
+arguments:
+
+--source: 0 (webcam) or xxx.mmp4 local video
+
+--max_age: Maximum number of frames to keep alive a track without associated detections
+
+--iou_threshold: bounding boxes overlapping ratio in two consecutive frames
+
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 

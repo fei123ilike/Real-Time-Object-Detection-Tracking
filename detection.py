@@ -22,7 +22,8 @@ class ObjectDetection:
     """
     
     def __init__(self, args):
-
+        
+        self.source = args.source
         self.model = self.load_model(args)
         self.classes = self.model.names
         self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
@@ -90,6 +91,9 @@ class ObjectDetection:
         :return: void
         """
         colours = np.random.rand(32, 3) # used only for display
+        
+        if self.source.isdigit(): 
+            self.source = int(self.source)
         cap = cv2.VideoCapture(0)
 
         while cap.isOpened():

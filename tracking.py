@@ -142,10 +142,10 @@ def parse_args():
     parser.add_argument('--source', help="input source either webcam or video file.", type=str, default='0')
     parser.add_argument("--max_age", 
                         help="Maximum number of frames to keep alive a track without associated detections.", 
-                        type=int, default=5)
+                        type=int, default=60)
     parser.add_argument("--min_hits", 
                         help="Minimum number of associated detections before track is initialised.", 
-                        type=int, default=0)
+                        type=int, default=3)
     parser.add_argument("--iou_threshold", help="Minimum IOU for match.", type=float, default=0.3)
     args = parser.parse_args()
     return args
